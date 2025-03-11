@@ -1,4 +1,5 @@
 import random
+import re #for better text cleaning
 
 # Predefined responses
 responses = {
@@ -8,6 +9,13 @@ responses = {
         "bye": ["Goodbye!", "See you later!", "Take care!"],
         "default": ["I'm not sure I understand. Can you rephrase that?", "Hmm, I don't have an answer for that."]
                             }
+# Function to clean user input
+def clean_input(user_input):
+    user_input = user_input.lower().strip()  # Convert to lowercase & remove spaces
+    user_input = re.sub(r"[^a-zA-Z0-9\s]", "", user_input)  # Remove special characters    
+    return user_input
+
+
 # Function to get response
 def get_response(user_input):
     user_input = user_input.lower()
