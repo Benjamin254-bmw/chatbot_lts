@@ -14,7 +14,7 @@ def get_response(user_input):
     for key in responses:
         if key in user_input:
             return random.choice(responses[key])
-        return random.choice(responses["default"])
+    return random.choice(responses["default"])
 
 # Chat loop
 print("ChatBot: Hello! Type 'bye' to exit.")
